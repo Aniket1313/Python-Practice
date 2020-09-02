@@ -1,18 +1,22 @@
-
-
-records = {}
-
-n = int(input())
-
-for i in range(0,n):
-    entry = str(input()).split(" ")
+phonebook = {}
+num = int(input())
+for i in range(0, num):
+    entry = input()
+    entry = entry.split()
     name = entry[0]
-    phonenumber = int(entry[1])
-    records[name]= phonenumber
+    number = entry[1]
+    phonebook[entry[0]] = phonebook.get(name,number)
 
-for i in range(0,n):
-    x =str(input())
-    if x in records:
-        print(x + '=' + str(records[name]))
-else :
-    print("Not found")
+
+
+while 1:
+    try:
+        for i in range(0, num):
+            name = input()
+            if name in phonebook:
+                print(name + "=" + str(phonebook[name]))
+            else:
+                print("Not found")
+    except:
+        break
+
